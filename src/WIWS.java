@@ -9,8 +9,8 @@ public class WIWS {
     public static void main(String[] args) throws IOException {
         // Load na site file names na originalnite sliki vo niza
         System.out.println("Reading Text File...");
-        File kur = new File("kur");
-        FileReader read = new FileReader(kur);
+        File photolist = new File("photolist");
+        FileReader read = new FileReader(photolist);
         BufferedReader buffer = new BufferedReader(read);
         String line = buffer.readLine();
         String[] array1 = new String[50];
