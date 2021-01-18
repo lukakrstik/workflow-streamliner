@@ -1,3 +1,4 @@
+/*
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.io.IOException;
@@ -6,7 +7,9 @@ import javax.imageio.*;
 import javax.imageio.stream.*;
 
 public class WIWS {
-    public static void main(String[] args) throws IOException {
+    */
+/*public static void main(String[] args) throws IOException*//*
+ {
         // Load na site file names na originalnite sliki vo niza
         System.out.println("Reading Text File...");
         File photolist = new File("photolist");
@@ -21,15 +24,45 @@ public class WIWS {
             counter1++;
             System.out.println("Done " + counter1);
         }
-        //System.out.println(array1[1]);
-        /*for (int counter3 = 0; array1[counter3] != null; counter3++) {
-            System.out.println(array1[counter3]);
-        }*/
         System.out.println("================================================================");
-        // Najkompliciranoto
+
+        for (int counter3 = 0; arrayComp[counter3] != null && arrayThumb[counter3] != null; counter3++) {
+            System.out.println("<div class=\"card m-2\" style=\"border: none;\">\n"+
+                    "\t<a href=\"" + "https://github.com/lukakrstik/website-photo-pool/blob/master/images/" + arrayComp[counter3] + "?raw=true\" data-fancybox=\"gallery\">\n"+
+                    "\t\t<img class=\"card-img\" src= \"" + "https://github.com/lukakrstik/website-photo-pool/blob/master/images/" + arrayThumb[counter3] + "?raw=true\">\n"+
+                    "\t</a>\n"+
+                    "</div>\n\n");
+        }
+        System.out.println("All URLs Generated, Pushed to Mainframe. All pussies fucked.");
+    }
+}
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*// Najkompliciranoto
         System.out.println("Image Compression...");
-        float quality = 0.7f;
-        float qualityThumb = 0.5f;
+        float quality = 1f;
+        float qualityThumb = 0.8f;
         String[] arrayComp = new String[50];
         String[] arrayThumb = new String[50];
         for (int counter2 = 0; array1[counter2] != null; counter2++) {
@@ -97,14 +130,4 @@ public class WIWS {
 
             System.out.println("Thumnails: Done " + (counter2 + 1));
         }
-        System.out.println("================================================================");
-        for (int counter3 = 0; arrayComp[counter3] != null && arrayThumb[counter3] != null; counter3++) {
-            System.out.println("<div class=\"card m-2\" style=\"border: none;\">\n"+
-                    "\t<a href=\"" + "https://github.com/lukakrstik/website-photo-pool/blob/master/images/" + arrayComp[counter3] + "?raw=true\" data-fancybox=\"gallery\">\n"+
-                    "\t\t<img class=\"card-img\" src= \"" + "https://github.com/lukakrstik/website-photo-pool/blob/master/images/" + arrayThumb[counter3] + "?raw=true\">\n"+
-                    "\t</a>\n"+
-                    "</div>\n\n");
-        }
-        System.out.println("All URLs Generated, Pushed to Mainframe. All pussies fucked.");
-    }
-}
+        System.out.println("================================================================");*/
