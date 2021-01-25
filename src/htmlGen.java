@@ -6,26 +6,34 @@ public class htmlGen {
         File[] listOfFiles = folder.listFiles();
         String[] arrayOptimized = new String[50];
         String[] arrayThumb = new String[50];
+        String[] arrayTag = new String[50];
         int arraycount1 = 0;
         int arraycount2 = 0;
 
         for (int i = 0; i < listOfFiles.length; i++) {
-            if (listOfFiles[i].isFile()) {
-                System.out.println("File " + listOfFiles[i].getName());
-                if (listOfFiles[i].getName().contains("O")) {
-                    arrayOptimized[arraycount1] = listOfFiles[i].getName();
-                    arraycount1++;
-                } else if (listOfFiles[i].getName().contains("T")) {
-                    arrayThumb[arraycount2] = listOfFiles[i].getName();
-                    arraycount2++;
-                }
+            System.out.println("File " + listOfFiles[i].getName());
+            if (listOfFiles[i].getName().contains("O")) {
+                arrayOptimized[arraycount1] = listOfFiles[i].getName();
+                arraycount1++;
+            } else if (listOfFiles[i].getName().contains("T")) {
+                arrayThumb[arraycount2] = listOfFiles[i].getName();
+                arraycount2++;
             }
-
+        }
+        for (int counter = 0; arrayThumb[counter] != null; counter++){
+                if (arrayThumb[counter].contains("X")) {
+                    arrayTag[counter] = "urbex";
+                } else if (arrayThumb[counter].contains("L")) {
+                    arrayTag[counter] = "landscape";
+                }
+                else{
+                    arrayTag[counter] = "null";
+                }
         }
         System.out.println("All Files Loaded, Noobs owned and pussies initiated...");
         for (int counter = 0; arrayOptimized[counter] != null && arrayThumb[counter] != null; counter++) {
             System.out.println(
-            "{ isColor: , isFeatured: , tlink: 'https://github.com/lukakrstik/website-photo-pool/blob/master/images/" + arrayThumb[counter] + "?raw=true', olink: 'https://github.com/lukakrstik/website-photo-pool/blob/master/images/" + arrayOptimized[counter] + "?raw=true' },");
+             "{ tag: '" + arrayTag[counter] + "', isColor: , isFeatured: , tlink: 'https://github.com/lukakrstik/website-photo-pool/blob/master/images/" + arrayThumb[counter] + "?raw=true', olink: 'https://github.com/lukakrstik/website-photo-pool/blob/master/images/" + arrayOptimized[counter] + "?raw=true' },");
         }
         System.out.println("All URLs Generated, Pushed to Mainframe. All pussies fucked.");
     }
