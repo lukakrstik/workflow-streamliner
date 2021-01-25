@@ -25,12 +25,13 @@ public class htmlGen {
         System.out.println("All Files Loaded, Noobs owned and pussies initiated...");
         for (int counter = 0; arrayOptimized[counter] != null && arrayThumb[counter] != null; counter++) {
             String tag = null;
+            String color = ((arrayThumb[counter].contains("B")) ? "false" : "true");
             for (String[] pair: categories) {
                 if (arrayThumb[counter].contains(pair[0]))
                     tag = pair[1];
             }
             System.out.println(
-             "{ tag: '" + tag + "', isColor: , isFeatured: , tlink: 'https://github.com/lukakrstik/website-photo-pool/blob/master/images/" + arrayThumb[counter] + "?raw=true', olink: 'https://github.com/lukakrstik/website-photo-pool/blob/master/images/" + arrayOptimized[counter] + "?raw=true' },");
+             "{ tag: '" + tag + "', isColor: " + color + ", isFeatured: , tlink: 'https://github.com/lukakrstik/website-photo-pool/blob/master/images/" + arrayThumb[counter] + "?raw=true', olink: 'https://github.com/lukakrstik/website-photo-pool/blob/master/images/" + arrayOptimized[counter] + "?raw=true' },");
         }
         System.out.println("All URLs Generated, Pushed to Mainframe. All pussies fucked.");
     }
