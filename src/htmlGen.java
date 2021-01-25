@@ -1,39 +1,36 @@
 import java.io.File;
-
 public class htmlGen {
     public static void main(String[] args) {
         File folder = new File("F:\\Test");
         File[] listOfFiles = folder.listFiles();
         String[] arrayOptimized = new String[50];
         String[] arrayThumb = new String[50];
-        String[] arrayTag = new String[50];
         int arraycount1 = 0;
         int arraycount2 = 0;
-
-        for (int i = 0; i < listOfFiles.length; i++) {
-            System.out.println("File " + listOfFiles[i].getName());
-            if (listOfFiles[i].getName().contains("O")) {
-                arrayOptimized[arraycount1] = listOfFiles[i].getName();
+        String[][] categories = {
+                {"X","urbex"},
+                {"L","landscape"},
+                {"A","autos"},
+        };
+        for (File file : listOfFiles) {
+            System.out.println("File " + file.getName());
+            if (file.getName().contains("O")) {
+                arrayOptimized[arraycount1] = file.getName();
                 arraycount1++;
-            } else if (listOfFiles[i].getName().contains("T")) {
-                arrayThumb[arraycount2] = listOfFiles[i].getName();
+            } else if (file.getName().contains("T")) {
+                arrayThumb[arraycount2] = file.getName();
                 arraycount2++;
             }
         }
-        for (int counter = 0; arrayThumb[counter] != null; counter++){
-                if (arrayThumb[counter].contains("X")) {
-                    arrayTag[counter] = "urbex";
-                } else if (arrayThumb[counter].contains("L")) {
-                    arrayTag[counter] = "landscape";
-                }
-                else{
-                    arrayTag[counter] = "null";
-                }
-        }
         System.out.println("All Files Loaded, Noobs owned and pussies initiated...");
         for (int counter = 0; arrayOptimized[counter] != null && arrayThumb[counter] != null; counter++) {
+            String tag = null;
+            for (String[] pair: categories) {
+                if (arrayThumb[counter].contains(pair[0]))
+                    tag = pair[1];
+            }
             System.out.println(
-             "{ tag: '" + arrayTag[counter] + "', isColor: , isFeatured: , tlink: 'https://github.com/lukakrstik/website-photo-pool/blob/master/images/" + arrayThumb[counter] + "?raw=true', olink: 'https://github.com/lukakrstik/website-photo-pool/blob/master/images/" + arrayOptimized[counter] + "?raw=true' },");
+             "{ tag: '" + tag + "', isColor: , isFeatured: , tlink: 'https://github.com/lukakrstik/website-photo-pool/blob/master/images/" + arrayThumb[counter] + "?raw=true', olink: 'https://github.com/lukakrstik/website-photo-pool/blob/master/images/" + arrayOptimized[counter] + "?raw=true' },");
         }
         System.out.println("All URLs Generated, Pushed to Mainframe. All pussies fucked.");
     }
@@ -44,3 +41,4 @@ public class htmlGen {
         "\t\t<img class=\"card-img\" src= \"" + "https://github.com/lukakrstik/website-photo-pool/blob/master/images/" + arrayThumb[counter] + "?raw=true\">\n"+
         "\t</a>\n"+
         "</div>\n\n"*/
+ 
