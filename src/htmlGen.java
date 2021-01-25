@@ -23,14 +23,16 @@ public class htmlGen {
 
         }
         System.out.println("All Files Loaded, Noobs owned and pussies initiated...");
-
         for (int counter = 0; arrayOptimized[counter] != null && arrayThumb[counter] != null; counter++) {
-            System.out.println("<div class=\"card m-2\" style=\"border: none;\">\n"+
-                    "\t<a href=\"" + "https://github.com/lukakrstik/website-photo-pool/blob/master/images/" + arrayOptimized[counter] + "?raw=true\" data-fancybox=\"gallery\">\n"+
-                    "\t\t<img class=\"card-img\" src= \"" + "https://github.com/lukakrstik/website-photo-pool/blob/master/images/" + arrayThumb[counter] + "?raw=true\">\n"+
-                    "\t</a>\n"+
-                    "</div>\n\n");
+            System.out.println(
+            "{ isColor: , isFeatured: , tlink: 'https://github.com/lukakrstik/website-photo-pool/blob/master/images/" + arrayThumb[counter] + "?raw=true', olink: 'https://github.com/lukakrstik/website-photo-pool/blob/master/images/" + arrayOptimized[counter] + "?raw=true' },");
         }
         System.out.println("All URLs Generated, Pushed to Mainframe. All pussies fucked.");
     }
 }
+/*
+"<div class=\"card m-2\" style=\"border: none;\">\n"+
+        "\t<a href=\"" + "https://github.com/lukakrstik/website-photo-pool/blob/master/images/" + arrayOptimized[counter] + "?raw=true\" data-fancybox=\"gallery\">\n"+
+        "\t\t<img class=\"card-img\" src= \"" + "https://github.com/lukakrstik/website-photo-pool/blob/master/images/" + arrayThumb[counter] + "?raw=true\">\n"+
+        "\t</a>\n"+
+        "</div>\n\n"*/
